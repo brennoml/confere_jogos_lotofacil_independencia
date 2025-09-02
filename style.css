@@ -1,3 +1,4 @@
+/* GERAL E TIPOGRAFIA */
 body {
   background: linear-gradient(135deg, #f0fff0 0%, #fffef0 100%); /* Gradiente suave verde/amarelo */
   color: #333;
@@ -27,6 +28,7 @@ h2 {
   text-shadow: none;
 }
 
+/* CONTAINERS PRINCIPAIS */
 .sorteio-container {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid #ddd;
@@ -37,6 +39,7 @@ h2 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* ENTRADAS DE NÚMEROS (INPUTS) */
 .input-container {
   display: flex;
   justify-content: center;
@@ -64,6 +67,7 @@ input[type="number"]:focus {
   box-shadow: 0 0 8px rgba(0, 155, 58, 0.3);
 }
 
+/* BOTÕES */
 .button-container {
   margin: 24px 0;
 }
@@ -71,7 +75,7 @@ input[type="number"]:focus {
 button {
   padding: 12px 24px;
   font-size: 18px;
-  background: linear-gradient(90deg, #009B3A 0%, #002776 100%); /* Verde e Azul */
+  background: #009B3A; /* Verde sólido */
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -79,14 +83,16 @@ button {
   margin: 0 10px;
   font-weight: bold;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
 button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #008230; /* Verde mais escuro */
 }
 
+/* SEÇÃO DE VALORES E PRÊMIOS */
 .prizes-container {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid #ddd;
@@ -113,7 +119,7 @@ button:hover {
   color: #002776;
 }
 
-.prize-inputs input[type="number"] {
+.prize-inputs input {
   width: 100px;
   height: 40px;
   font-size: 16px;
@@ -124,6 +130,32 @@ button:hover {
   color: #002776;
 }
 
+#update-prizes-button:hover {
+  background: #e6b825; /* Amarelo mais escuro */
+}
+
+#toggle-prize-config-button {
+  background: #f0f0f0;
+  color: #333;
+  font-size: 14px;
+  padding: 8px 16px;
+  margin-top: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#toggle-prize-config-button:hover {
+  background: #e0e0e0; /* Cinza mais escuro */
+}
+
+.prize-note {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* SEÇÃO DE RESULTADOS */
 .results {
   margin-top: 40px;
   text-align: center;
@@ -147,11 +179,27 @@ button:hover {
 }
 
 #result-message {
-  margin: 20px 0;
-  font-size: 24px;
+  margin: 20px auto;
+  padding: 15px;
+  font-size: 18px;
   font-weight: bold;
   color: #002776; /* Azul */
   text-shadow: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  max-width: 800px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#result-message h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+#result-message div {
+  margin-bottom: 5px;
 }
 
 .output-section {
@@ -232,6 +280,34 @@ button:hover {
   text-align: center;
 }
 
+#prize-breakdown {
+  margin-top: 15px;
+  text-align: left;
+  font-size: 16px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breakdown-line {
+  color: #333;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.breakdown-label {
+  font-weight: bold;
+  color: #002776;
+}
+
+.breakdown-value {
+  color: #009B3A;
+}
+
+/* ELEMENTOS DECORATIVOS */
 /* Barra superior com cores do Brasil */
 body::before {
   content: "";
@@ -245,6 +321,7 @@ body::before {
   z-index: 1000;
 }
 
+/* RESPONSIVIDADE */
 /* Responsividade para telas menores */
 @media screen and (max-width: 768px) {
   body {
@@ -300,7 +377,7 @@ body::before {
     justify-content: space-between;
   }
 
-  .prize-inputs input[type="number"] {
+  .prize-inputs input {
     width: 120px;
   }
 
